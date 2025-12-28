@@ -1,0 +1,221 @@
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Page body styling */
+body {
+  font-family: Arial, sans-serif;      /* Set font style */
+  background: #f2f5f9;                 /* Light background color */
+  padding: 20px;                       /* Space around content */
+}
+
+/* Main container styling */
+.container {
+  max-width: 950px;                    /* Maximum width */
+  margin: auto;                        /* Center horizontally */
+  background: white;                  /* White background */
+  padding: 25px;                      /* Inner spacing */
+  border-radius: 12px;                /* Rounded corners */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* Shadow effect */
+}
+
+/* Header alignment */
+header {
+  text-align: center;                 /* Center text */
+  margin-bottom: 20px;                /* Space below header */
+}
+
+/* Subtitle text */
+.subtitle {
+  color: #666;                        /* Grey color */
+  font-size: 14px;                    /* Small font size */
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;                      /* Horizontal layout */
+  gap: 10px;                          /* Space between tabs */
+  margin-bottom: 20px;
+}
+
+/* Individual tab button */
+.tab {
+  padding: 10px 18px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;                   /* Smooth hover effect */
+}
+
+/* Active tab styling */
+.tab.active {
+  background: #4caf50;
+  color: white;
+}
+
+/* Hover effect on tab */
+.tab:hover {
+  opacity: 0.85;
+}
+
+/* Hide tab content by default */
+.tab-content {
+  display: none;
+  animation: fade 0.4s ease-in;       /* Fade animation */
+}
+
+/* Show active tab content */
+.tab-content.active {
+  display: block;
+}
+
+/* Accordion box style */
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+
+/* Accordion title */
+.accordion summary {
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Grid layout for form fields */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 15px;
+}
+
+/* Element takes full row */
+.full {
+  grid-column: span 2;
+}
+
+/* Label styling */
+label {
+  font-weight: 600;
+}
+
+/* Input, select and textarea styling */
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Focus effect */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #4caf50;
+}
+
+/* Tooltip icon */
+.tooltip {
+  cursor: pointer;
+  color: #4caf50;
+  position: relative;
+  margin-left: 5px;
+}
+
+/* Tooltip text */
+.tooltip::after {
+  content: attr(data-tip);            /* Show tooltip text */
+  position: absolute;
+  left: 0;
+  top: 130%;
+  background: #333;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;                         /* Hidden initially */
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background: #43a047;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+/* Table header */
+th {
+  background: #4caf50;
+  color: white;
+}
+
+/* Table cells */
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Alternate row color */
+tr:nth-child(even) {
+  background: #f6f6f6;
+}
+
+/* Success message */
+#successMsg {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Fade animation */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;       /* Single column layout */
+  }
+}
